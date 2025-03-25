@@ -1,1 +1,98 @@
-...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eid Salami 🎁</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #fff9e6, #fceabb);
+      text-align: center;
+      padding: 30px 10px;
+      margin: 0;
+    }
+
+    .card {
+      display: inline-block;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px 5px #ff69b4;
+      animation: pulse 2s infinite;
+      max-width: 95%;
+      width: 400px;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px 3px #d63384; }
+      50% { box-shadow: 0 0 25px 7px #ff69b4; }
+      100% { box-shadow: 0 0 15px 3px #d63384; }
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 1.5em;
+      text-shadow: 0 0 10px #ffb3ec;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1em;
+      line-height: 1.4;
+    }
+
+    .note-label {
+      font-size: 1.2em;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .eid-emoji {
+      font-size: 2em;
+      animation: float 3s ease-in-out infinite;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .counter {
+      font-size: 0.9em;
+      color: #999;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="eid-emoji">🌙✨🕌 Eid Mubarak! 🕌✨🌙</div>
+
+  <div class="card">
+    <h1>💸 Eid Salami from <%= name %> 💸</h1>
+    <div class="note-label">Here’s your salami:</div>
+    <img src="<%= note %>" alt="TK Note">
+    <p><%= message %></p>
+    <div class="counter">
+      👀 This salami link has been opened <strong><%= views %></strong> time<%= views > 1 ? "s" : "" %>.
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="<%= song %>" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+</body>
+</html>
