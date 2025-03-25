@@ -70,6 +70,41 @@
       display: none;
     }
 
+    .make-own-btn {
+      display: inline-block;
+      margin: 1.5rem auto 0;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .make-own-btn:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -80,7 +115,6 @@
       50% { box-shadow: 0 0 25px 8px #ffa3d3; }
     }
 
-    /* 📱 Responsive tweaks */
     @media (max-width: 480px) {
       body {
         padding: 1.5rem 0.5rem;
@@ -102,6 +136,11 @@
       p, .note-label {
         font-size: 1rem;
       }
+
+      .make-own-btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
@@ -115,6 +154,9 @@
     <img src="<%= note %>" alt="TK Note" />
     <p><%= message %></p>
   </div>
+
+  <!-- 👇 Button to return to home/index -->
+  <a href="/" class="make-own-btn">🎁 Make Your Own Link</a>
 
   <audio autoplay loop>
     <source src="<%= song %>" type="audio/mpeg">
