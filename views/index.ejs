@@ -5,26 +5,140 @@
   <title>Send Eid Salami</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: sans-serif; text-align: center; background: radial-gradient(circle at top, #fff9e6, #fceabb); padding: 40px 10px; margin: 0; }
-    h1 { font-size: 2em; color: #d63384; text-shadow: 0 0 5px #ffb3ec; margin-bottom: 20px; }
-    form { display: inline-block; background: #ffffffcc; padding: 20px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1); max-width: 400px; width: 90%; }
-    input, textarea { width: 100%; padding: 10px; font-size: 16px; margin: 10px 0; border: 2px solid #ddd; border-radius: 8px; }
-    textarea { resize: none; }
-    button { background-color: #28a745; color: white; padding: 12px 25px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; }
-    button:hover { background-color: #218838; }
-    .emoji { font-size: 1.5em; margin-bottom: 10px; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: radial-gradient(circle at top, #fff9e6, #fceabb);
+      margin: 0;
+      padding: 40px 10px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #d63384;
+      text-shadow: 0 0 5px #ffb3ec;
+      margin-bottom: 20px;
+    }
+
+    .emoji {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    form {
+      display: inline-block;
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 10px 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* 📱 Responsive Tweaks */
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .emoji {
+        font-size: 1.4em;
+      }
+
+      input, textarea {
+        font-size: 15px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="emoji">🧧✨🌙 Send Funny Eid Salami 🌙✨🧧</div>
-  <h1>Create Your Eid Salami Link</h1>
+
+  <div class="emoji">🧧✨🌙 Send  Eid Virtual Salami 🌙✨🧧</div>
+
+  <h1>Create Your Eid Virtual Salami Link</h1>
+
   <form action="/send" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
-    <textarea name="message" placeholder="Your Eid message..." rows="3"></textarea>
+    <textarea name="message" placeholder="Type Your Eid message for your friend..." rows="3"></textarea>
     <button type="submit">Send Salami</button>
-    <div class="counter">
-      👀 This salami link has been opened <strong><%= views %></strong> time<%= views > 1 ? "s" : "" %>.
-    </div>
   </form>
+
+  <footer>
+          <div class="counter">
+      👀 This Salami link has been opened <strong><%= views %></strong> time<%= views > 1 ? "s" : "" %>.
+    </div>
+    
+    © Developed by ❤️ 
+    <a href="https://github.com/FahimSWE40" target="_blank">Fahim</a>
+  </footer>
+
 </body>
 </html>
