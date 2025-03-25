@@ -22,6 +22,9 @@
     <input type="text" name="name" placeholder="Your Name" required />
     <textarea name="message" placeholder="Your Eid message..." rows="3"></textarea>
     <button type="submit">Send Salami</button>
+    <div class="counter">
+      👀 This salami link has been opened <strong><%= views %></strong> time<%= views > 1 ? "s" : "" %>.
+    </div>
   </form>
 </body>
 </html>
