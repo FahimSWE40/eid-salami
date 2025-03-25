@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eid Salami 🎁</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #fff6e0, #ffe3ec);
       text-align: center;
       margin: 0;
       padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .eid-emoji {
@@ -24,9 +32,8 @@
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
-      display: inline-block;
-      width: 100%;
       max-width: 420px;
+      width: 100%;
       animation: glow 2.5s ease-in-out infinite;
     }
 
@@ -60,16 +67,6 @@
       padding: 0 10px;
     }
 
-    .counter {
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 1rem;
-    }
-
-    audio {
-      display: none;
-    }
-
     .make-own-btn {
       display: inline-block;
       margin: 1.5rem auto 0;
@@ -93,6 +90,7 @@
       padding: 10px;
       font-size: 0.9em;
       color: #777;
+      text-align: center;
     }
 
     footer a {
@@ -105,6 +103,10 @@
       text-decoration: underline;
     }
 
+    audio {
+      display: none;
+    }
+
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -115,11 +117,8 @@
       50% { box-shadow: 0 0 25px 8px #ffa3d3; }
     }
 
+    /* 📱 Extra Responsive Tweaks */
     @media (max-width: 480px) {
-      body {
-        padding: 1.5rem 0.5rem;
-      }
-
       .card {
         padding: 1.5rem 1rem;
         border-radius: 16px;
@@ -141,6 +140,10 @@
         font-size: 0.95rem;
         padding: 10px 20px;
       }
+
+      footer {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -155,8 +158,7 @@
     <p><%= message %></p>
   </div>
 
-  <!-- 👇 Button to return to home/index -->
-  <a href="/" class="make-own-btn">🎁 Make Your Own Link</a>
+<a href="/" class="make-own-btn">🎁 Make Your Own Link</a>
 
   <audio autoplay loop>
     <source src="<%= song %>" type="audio/mpeg">
