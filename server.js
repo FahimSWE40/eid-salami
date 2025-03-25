@@ -17,10 +17,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+// ✅ Homepage route with visit counter
 app.get('/', (req, res) => {
-  res.render('index');
+  data.homepageViews = (data.homepageViews || 0) + 1;
+  fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+  res.render('index', { homepageViews: data.homepageViews });
 });
 
+// Generate and save new salami link
 app.post('/send', (req, res) => {
   const name = req.body.name;
   const message = req.body.message || "Eid Mubarak! Here's your salami!";
@@ -31,6 +35,7 @@ app.post('/send', (req, res) => {
   res.render('link', { link: fullLink });
 });
 
+// Visit salami link
 app.get('/s/:id', (req, res) => {
   const id = req.params.id;
   const entry = data[id];
